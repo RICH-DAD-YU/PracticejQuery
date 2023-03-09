@@ -1,0 +1,57 @@
+.gallery {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-item {
+    list-style: none;
+    margin-top: 10px;
+}
+
+/* 이미지를 로딩하는 동안 보이지 않게 함 */
+.gallery-item.is-loading {
+    opacity: 0;
+}
+
+.filter-form{
+    float: right;
+}
+
+.filter-form label {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 1em;
+    padding: 0 0.25em;
+    -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+}
+
+.filter-form label.ui-state-focus{
+    outline: 1px dotted;
+}
+
+.filter-form label.ui-icon{
+    background: url(../img/sprites.png) no-repeat 0 0;
+    display: inline-block;
+    height: 17px;
+    margin-right: 0.5em;
+    margin-top: 2px;
+    width: 17px;
+    vertical-align: top;
+}
+
+.filter-form label.ui-state-active .ui-icon{
+    background-position: -20px 0;
+}
+
+/* 이미지 항목 추가 읽기 버튼 */
+.load-more {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(230, 230, 230);
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    margin-top: 10px;
+}
