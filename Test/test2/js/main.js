@@ -1,27 +1,19 @@
-$(function(){
+$(function () {
+  $("#printBtn").on("click", function () {
+    console.log("click!!");
 
-        $("#printBtn").on("click", function () {
+    $.getJSON("./data/content.json", function (data) {
+      var elements = [];
 
-      console.log("click!!");
+      $.each(data, function (i, item) {
+        var itemHTML =
+          "<div>" + "<h3>" + item.term + "</h3>" + "<h2>" + item.part + "</h2>" + "</div>";
 
-      $.getJSON("./data/content.json", function (data) {
-        var elements = [];
+        console.log(itemHTML);
 
-        $.each(data, function (i, item) {
-          var itemHTML =
-            "<div>" +
-            "<h3>" +
-            item.term +
-            "</h3>" +
-            "<h2>" +
-            item.part +
-            "</h2>" +
-            "</div>";
-
-          console.log(itemHTML);
-          
-          elements.push($(itemHTML).get(0));
-        });
+        elements.push($(itemHTML).get(0));
       });
+      $("#content").html(elements);
     });
-    })
+  });
+});
